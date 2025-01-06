@@ -1,0 +1,20 @@
+name = "blinky"
+version = 5
+
+[device]
+family = "GW5AST-138B"
+part = "GW5AST-LV138FPG676AC1/I0"
+
+[hdl]
+standard = "sysv2017"
+
+[files]
+cst = "phy.cst"
+sdc = "timing.sdc"
+verilog = ["rtl/top.sv", "rtl/internal_osc.sv"]
+
+[programmer]
+fs = "impl/pnr/project.fs"
+
+preset.sram = { op = "2" }
+preset.spi = { op = "53" }
